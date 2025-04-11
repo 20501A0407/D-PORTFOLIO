@@ -1,98 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinesh Aluri | Portfolio</title>
+  
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f2937',
+            accent: '#3b82f6',
+          },
+          animation: {
+            fadeIn: 'fadeIn 1s ease-in-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script type="module">
+    import { createIcons, icons } from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
+    window.onload = () => createIcons({ icons });
+  </script>
+
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
-  <!-- Hero Section -->
-  <section class="bg-white py-16 text-center">
-    <h1 class="text-4xl font-bold">Dinesh Aluri</h1>
-    <p class="mt-2 text-xl text-gray-600">ECE Graduate | AI/ML & Signal Processing Enthusiast</p>
-    <div class="mt-4">
-      <a href="#projects" class="bg-blue-600 text-white px-4 py-2 rounded-xl mr-4 hover:bg-blue-700">View Projects</a>
-      <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-xl hover:bg-gray-900">Download Resume</a>
-    </div>
-  </section>
+<body class="bg-white dark:bg-primary text-black dark:text-white transition-all duration-500 ease-in-out font-sans">
 
-  <!-- About Me -->
-  <section class="py-12 px-6 max-w-5xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4">About Me</h2>
-    <p class="mb-4">Electronics and Communication Engineering (ECE) graduate with a strong passion for Artificial Intelligence (AI) and Machine Learning (ML), antenna designing theory, and digital communications. Enthusiastic about exploring the intersection of AI/ML with signal processing, wireless communication, and RF domain.</p>
-    <h3 class="text-xl font-semibold mt-6">Skills</h3>
-    <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 list-disc list-inside mt-2">
-      <li>Python</li>
-      <li>MATLAB</li>
-      <li>Tkinter</li>
-      <li>JavaFX</li>
-      <li>SQLite</li>
-      <li>Git & GitHub</li>
-      <li>HTML & CSS</li>
-      <li>Scikit-learn</li>
-      <li>Windows & Linux</li>
-    </ul>
-  </section>
+  <div class="max-w-4xl mx-auto p-6">
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-gray-200 py-12 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl font-bold mb-6">Projects</h2>
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold animate-fadeIn">Dinesh Aluri</h1>
+      <button onclick="document.documentElement.classList.toggle('dark')" class="px-4 py-2 bg-gray-800 text-white dark:bg-white dark:text-black rounded transition hover:scale-105">
+        Toggle Dark Mode
+      </button>
+    </header>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold">GPS Spoofing Detection System</h3>
-        <p class="text-gray-700">Uses cryptographic signatures and machine learning to detect spoofed GPS signals, with real-time tracking and logging.</p>
-        <p class="text-sm mt-1">Tech Stack: Python, SQLite, Scikit-learn, Tkinter, Folium, PyCryptodome, Matplotlib</p>
-        <a href="https://github.com/20501A0407/GPS-Spoofing-Detection" class="text-blue-600 underline">GitHub</a>
-      </div>
+    <!-- Profile Image -->
+    <div class="text-center my-6">
+      <img src="profile.jpg" alt="Dinesh Aluri" class="w-32 h-32 rounded-full mx-auto shadow-lg" />
+      <p class="mt-2 text-lg">ECE Graduate | AI/ML Enthusiast | Signal Processing | Wireless Communication</p>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold">GADI Email Filter</h3>
-        <p class="text-gray-700">Bulk email filtering tool with high accuracy and real-time GUI for email validation, deduplication, and backup.</p>
-        <p class="text-sm mt-1">Tech Stack: Python, Pandas, Tkinter, OpenPyXL</p>
-        <a href="https://github.com/20501A0407/GADI-email-filter" class="text-blue-600 underline">GitHub</a>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold">RFID Door Lock Authentication</h3>
-        <p class="text-gray-700">Multi-factor authentication door lock system using RFID, PIN, and biometrics integrated with Raspberry Pi and Arduino.</p>
-        <p class="text-sm mt-1">Tech Stack: Raspberry Pi, Python, Arduino</p>
-        <a href="https://github.com/20501A0407/RFID-Door-Lock-Authentication" class="text-blue-600 underline">GitHub</a>
+      <!-- Social Icons -->
+      <div class="flex justify-center gap-6 mt-4">
+        <a href="https://github.com/20501A0407" target="_blank" class="hover:scale-110 transition">
+          <i data-lucide="github" class="w-6 h-6 text-gray-800 dark:text-white"></i>
+        </a>
+        <a href="https://linkedin.com/in/dineshaluri" target="_blank" class="hover:scale-110 transition">
+          <i data-lucide="linkedin" class="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
+        </a>
+        <a href="mailto:dineshalurii@gmail.com" class="hover:scale-110 transition">
+          <i data-lucide="mail" class="w-6 h-6 text-red-600 dark:text-red-400"></i>
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- Experience -->
-  <section class="py-12 px-6 max-w-5xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4">Experience</h2>
-    <h3 class="text-xl font-semibold">Cloud Computing Intern – Brainovision Solutions India Pvt. Ltd. (2024)</h3>
-    <ul class="list-disc list-inside text-gray-700 mt-2">
-      <li>Set up and managed AWS infrastructure including EC2, S3, and RDS.</li>
-      <li>Configured CI/CD pipelines using GitLab CI and AWS CodePipeline.</li>
-      <li>Used AWS CloudWatch for monitoring and troubleshooting.</li>
-    </ul>
-  </section>
+    <!-- Projects -->
+    <section class="my-10">
+      <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Projects</h2>
 
-  <!-- Certifications and Achievements -->
-  <section class="bg-gray-100 py-12 px-6 max-w-5xl mx-auto">
-    <h2 class="text-2xl font-bold mb-4">Certifications & Achievements</h2>
-    <ul class="list-disc list-inside">
-      <li>Python - Infosys Springboard</li>
-      <li>C - Infosys Springboard</li>
-      <li>JNTUK South Zone Hockey Representative</li>
-      <li>National Level Painting Competition by PCRA - Appreciation Certificate</li>
-      <li>NCC 'A' Certificate</li>
-    </ul>
-  </section>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="text-xl font-semibold">GPS Spoofing Detection</h3>
+          <p>ML-based detection with real-time tracking and crypto authentication.</p>
+          <a href="https://github.com/20501A0407/GPS-Spoofing-Detection" class="text-accent">GitHub Repo →</a>
+        </div>
+        <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="text-xl font-semibold">GADI Email Filter</h3>
+          <p>Bulk email filtering and deduplication with real-time GUI.</p>
+          <a href="https://github.com/20501A0407/GADI-email-filter" class="text-accent">GitHub Repo →</a>
+        </div>
+        <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
+          <h3 class="text-xl font-semibold">RFID Door Lock</h3>
+          <p>Multi-factor authentication system using Raspberry Pi + Arduino.</p>
+          <a href="https://github.com/20501A0407/RFID-Door-Lock-Authentication" class="text-accent">GitHub Repo →</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- Contact -->
-  <section class="bg-white py-12 px-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-    <p>Email: <a href="mailto:dineshalurii@gmail.com" class="text-blue-600">dineshalurii@gmail.com</a></p>
-    <p>Phone: +91 9640650107</p>
-    <p>GitHub: <a href="https://github.com/20501a0407" class="text-blue-600">github.com/20501a0407</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/dineshaluri" class="text-blue-600">linkedin.com/in/dineshaluri</a></p>
-  </section>
+    <!-- Contact Form -->
+    <section class="my-10">
+      <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Contact Me</h2>
+      <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 border rounded dark:bg-gray-800" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded dark:bg-gray-800" />
+        <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-2 border rounded dark:bg-gray-800"></textarea>
+        <button type="submit" class="bg-accent text-white px-4 py-2 rounded hover:bg-blue-700 transition">Send</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 opacity-80 text-sm">
+      © 2025 Dinesh Aluri. Built with ❤️ using HTML & Tailwind CSS.
+    </footer>
+  </div>
+
 </body>
 </html>
