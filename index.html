@@ -1,143 +1,187 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dinesh Aluri | Portfolio</title>
-
-  <!-- Tailwind CDN -->
+  <title>Dinesh Aluri - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module">
+    import { createIcons, icons } from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
+    window.onload = () => createIcons({ icons });
+  </script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            primary: '#1f2937',
-            accent: '#3b82f6',
-          },
           animation: {
-            fadeIn: 'fadeIn 1s ease-in-out forwards',
+            fadeIn: "fadeIn 1s ease-in-out forwards"
           },
           keyframes: {
             fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 }
             }
           }
         }
       }
-    }
-  </script>
-
-  <!-- Lucide Icons -->
-  <script type="module">
-    import { createIcons, icons } from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
-    window.onload = () => createIcons({ icons });
+    };
   </script>
 </head>
-<body class="bg-white dark:bg-primary text-black dark:text-white transition-all duration-500 ease-in-out font-sans">
 
-  <div class="max-w-4xl mx-auto p-6">
-
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold animate-fadeIn">Dinesh Aluri</h1>
-      <button onclick="document.documentElement.classList.toggle('dark')" class="px-4 py-2 bg-gray-800 text-white dark:bg-white dark:text-black rounded transition hover:scale-105">
-        Toggle Dark Mode
-      </button>
-    </header>
-
-    <!-- Profile Image -->
-    <div class="text-center my-6">
-      <img src="profile.jpg" alt="Dinesh Aluri" class="w-32 h-32 rounded-full mx-auto shadow-lg" />
-      <p class="mt-2 text-lg">ECE Graduate | AI/ML Enthusiast | Signal Processing | Wireless Communication</p>
-
-      <!-- Social Icons -->
-      <div class="flex justify-center gap-6 mt-4">
-        <a href="https://github.com/20501A0407" target="_blank" class="hover:scale-110 transition">
-          <i data-lucide="github" class="w-6 h-6 text-gray-800 dark:text-white"></i>
-        </a>
-        <a href="https://linkedin.com/in/dineshaluri" target="_blank" class="hover:scale-110 transition">
-          <i data-lucide="linkedin" class="w-6 h-6 text-blue-600 dark:text-blue-400"></i>
-        </a>
-        <a href="mailto:dineshalurii@gmail.com" class="hover:scale-110 transition">
-          <i data-lucide="mail" class="w-6 h-6 text-red-600 dark:text-red-400"></i>
-        </a>
-      </div>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500">
+  <header class="p-6 bg-gray-100 dark:bg-gray-800 shadow">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Dinesh Aluri</h1>
+      <nav class="flex gap-4">
+        <a href="#projects" class="hover:underline">Projects</a>
+        <a href="#skills" class="hover:underline">Skills</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+        <button onclick="document.body.classList.toggle('dark')" class="ml-4">
+          <i data-lucide="moon" class="w-5 h-5"></i>
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Skills & Experience -->
-    <section class="my-10 animate-fadeIn">
-      <h2 class="text-2xl font-bold mb-4">Skills & Experience</h2>
+  <main class="container mx-auto p-6">
+    <!-- About Section -->
+    <section class="mb-10 animate-fadeIn">
+      <h2 class="text-2xl font-bold mb-4">About Me</h2>
+      <p>
+        Electronics and Communication Engineering (ECE) graduate with a strong passion for AI/ML, antenna design,
+        digital communications, and exploring AI/ML in signal processing, wireless communication, and RF domain.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mb-10">
+      <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Projects</h2>
       <div class="grid md:grid-cols-2 gap-6">
-
-        <!-- Skills -->
         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Skills</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li><strong>Languages:</strong> Python, MATLAB, C</li>
-            <li><strong>Frameworks:</strong> Tkinter, JavaFX</li>
-            <li><strong>Technologies:</strong> HTML, CSS, ML (Scikit-learn), Cryptography (PyCryptodome)</li>
-            <li><strong>Databases:</strong> SQLite</li>
-            <li><strong>Tools:</strong> Git, GitHub, VS Code</li>
-            <li><strong>OS:</strong> Windows, Linux</li>
+          <h3 class="text-xl font-semibold">GPS Spoofing Detection System</h3>
+          <ul class="list-disc list-inside">
+            <li>Cryptographic GPS signal authentication</li>
+            <li>ML-based spoofing detection using logistic regression</li>
+            <li>Live GPS monitoring and logging</li>
           </ul>
+          <a href="https://github.com/20501A0407/GPS-Spoofing-Detection" class="text-blue-500 hover:underline">View on GitHub</a>
         </div>
-
-        <!-- Experience -->
         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Work Experience</h3>
-          <p class="font-medium">Cloud Computing Intern - Brainovision Solutions (2024)</p>
-          <ul class="list-disc list-inside mt-2 space-y-1">
-            <li>Managed AWS infrastructure (EC2, S3, RDS).</li>
-            <li>Setup CI/CD pipelines with GitLab CI and AWS CodePipeline.</li>
-            <li>Used AWS CloudWatch for real-time monitoring & debugging.</li>
+          <h3 class="text-xl font-semibold">GADI Email Filter</h3>
+          <ul class="list-disc list-inside">
+            <li>Validated 10M+ emails with 95% accuracy</li>
+            <li>GUI with progress tracking, backup, and deduplication</li>
           </ul>
+          <a href="https://github.com/20501A0407/GADI-email-filter" class="text-blue-500 hover:underline">View on GitHub</a>
         </div>
-
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold">RFID Door Lock Authentication</h3>
+          <ul class="list-disc list-inside">
+            <li>Multi-factor verification with 99.9% accuracy</li>
+            <li>Tested across 100+ authentication attempts</li>
+          </ul>
+          <a href="https://github.com/20501A0407/RFID-Door-Lock-Authentication" class="text-blue-500 hover:underline">View on GitHub</a>
+        </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="my-10">
-      <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Projects</h2>
-
+    <!-- Skills & Experience Section -->
+    <section id="skills" class="my-10">
+      <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Skills & Experience</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
-          <h3 class="text-xl font-semibold">GPS Spoofing Detection</h3>
-          <p>ML-based detection with crypto GPS signal verification & live tracking.</p>
-          <a href="https://github.com/20501A0407/GPS-Spoofing-Detection" class="text-accent">GitHub Repo →</a>
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow">
+          <h3 class="font-semibold text-lg mb-2">Skills</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Languages: Python, MATLAB</li>
+            <li>Frameworks: Tkinter, JavaFX</li>
+            <li>Database: SQLite</li>
+            <li>Tools: Git, GitHub, VS Code</li>
+            <li>Tech: HTML, CSS, ML (Scikit-learn), PyCryptodome</li>
+            <li>OS: Windows, Linux</li>
+          </ul>
         </div>
-        <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
-          <h3 class="text-xl font-semibold">GADI Email Filter</h3>
-          <p>Bulk email cleaner with GUI, real-time tracking & backup support.</p>
-          <a href="https://github.com/20501A0407/GADI-email-filter" class="text-accent">GitHub Repo →</a>
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow">
+          <h3 class="font-semibold text-lg mb-2">Experience</h3>
+          <p class="mb-2 font-medium">Cloud Computing Intern @ Brainovision Solutions India Pvt. Ltd (2024)</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Managed AWS (EC2, S3, RDS), CI/CD with GitLab & CodePipeline</li>
+            <li>Monitored performance with CloudWatch</li>
+          </ul>
         </div>
-        <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
-          <h3 class="text-xl font-semibold">RFID Door Lock</h3>
-          <p>RFID, biometric, and PIN-based door access control system.</p>
-          <a href="https://github.com/20501A0407/RFID-Door-Lock-Authentication" class="text-accent">GitHub Repo →</a>
+      </div>
+    </section>
+
+    <!-- Certifications & Achievements -->
+    <section class="my-10">
+      <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Certifications & Achievements</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold flex items-center gap-2">
+            <i data-lucide="award" class="w-5 h-5 text-green-600 dark:text-green-400"></i>
+            Certifications
+          </h3>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i>
+              Python - Infosys Springboard
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i>
+              C - Infosys Springboard
+            </li>
+          </ul>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold flex items-center gap-2">
+            <i data-lucide="star" class="w-5 h-5 text-yellow-500 dark:text-yellow-300"></i>
+            Achievements
+          </h3>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li class="flex items-center gap-2">
+              <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
+              Represented JNTUK in South Zone Inter-University Hockey Tournament
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i>
+              Participated in 26th National Hockey Meet - JNV
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="paintbrush" class="w-4 h-4 text-pink-500"></i>
+              National Level Painting Competition (PCRA)
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="shield-check" class="w-4 h-4 text-indigo-500"></i>
+              NCC “A” Certificate Holder
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
     <!-- Contact Form -->
-    <section class="my-10">
+    <section id="contact" class="my-10">
       <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Contact Me</h2>
-      <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-4">
-        <input type="text" name="name" placeholder="Your Name" required class="w-full p-2 border rounded dark:bg-gray-800" />
-        <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded dark:bg-gray-800" />
-        <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-2 border rounded dark:bg-gray-800"></textarea>
-        <button type="submit" class="bg-accent text-white px-4 py-2 rounded hover:bg-blue-700 transition">Send</button>
+      <form class="grid gap-4 max-w-xl">
+        <input type="text" placeholder="Name" class="p-2 rounded border dark:bg-gray-700" required>
+        <input type="email" placeholder="Email" class="p-2 rounded border dark:bg-gray-700" required>
+        <textarea placeholder="Message" rows="5" class="p-2 rounded border dark:bg-gray-700" required></textarea>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
+          Send Message
+        </button>
       </form>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="text-center mt-10 opacity-80 text-sm">
-      © 2025 Dinesh Aluri. Built with ❤️ using HTML & Tailwind CSS.
-    </footer>
-
-  </div>
+  <footer class="p-6 bg-gray-100 dark:bg-gray-800 text-center text-sm">
+    <div class="flex justify-center gap-4 mb-2">
+      <a href="https://github.com/20501a0407" target="_blank"><i data-lucide="github"></i></a>
+      <a href="https://linkedin.com/in/dineshaluri" target="_blank"><i data-lucide="linkedin"></i></a>
+      <a href="mailto:dineshalurii@gmail.com"><i data-lucide="mail"></i></a>
+    </div>
+    <p>© 2025 Dinesh Aluri. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
