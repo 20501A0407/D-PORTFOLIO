@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinesh Aluri | Portfolio</title>
-  
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -30,12 +30,11 @@
     }
   </script>
 
-  <!-- Lucide Icons CDN -->
+  <!-- Lucide Icons -->
   <script type="module">
     import { createIcons, icons } from "https://unpkg.com/lucide@latest/dist/esm/lucide.js";
     window.onload = () => createIcons({ icons });
   </script>
-
 </head>
 <body class="bg-white dark:bg-primary text-black dark:text-white transition-all duration-500 ease-in-out font-sans">
 
@@ -68,6 +67,38 @@
       </div>
     </div>
 
+    <!-- Skills & Experience -->
+    <section class="my-10 animate-fadeIn">
+      <h2 class="text-2xl font-bold mb-4">Skills & Experience</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Skills -->
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Skills</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li><strong>Languages:</strong> Python, MATLAB, C</li>
+            <li><strong>Frameworks:</strong> Tkinter, JavaFX</li>
+            <li><strong>Technologies:</strong> HTML, CSS, ML (Scikit-learn), Cryptography (PyCryptodome)</li>
+            <li><strong>Databases:</strong> SQLite</li>
+            <li><strong>Tools:</strong> Git, GitHub, VS Code</li>
+            <li><strong>OS:</strong> Windows, Linux</li>
+          </ul>
+        </div>
+
+        <!-- Experience -->
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Work Experience</h3>
+          <p class="font-medium">Cloud Computing Intern - Brainovision Solutions (2024)</p>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>Managed AWS infrastructure (EC2, S3, RDS).</li>
+            <li>Setup CI/CD pipelines with GitLab CI and AWS CodePipeline.</li>
+            <li>Used AWS CloudWatch for real-time monitoring & debugging.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Projects -->
     <section class="my-10">
       <h2 class="text-2xl font-bold mb-4 animate-fadeIn">Projects</h2>
@@ -75,17 +106,17 @@
       <div class="grid md:grid-cols-2 gap-6">
         <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
           <h3 class="text-xl font-semibold">GPS Spoofing Detection</h3>
-          <p>ML-based detection with real-time tracking and crypto authentication.</p>
+          <p>ML-based detection with crypto GPS signal verification & live tracking.</p>
           <a href="https://github.com/20501A0407/GPS-Spoofing-Detection" class="text-accent">GitHub Repo →</a>
         </div>
         <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
           <h3 class="text-xl font-semibold">GADI Email Filter</h3>
-          <p>Bulk email filtering and deduplication with real-time GUI.</p>
+          <p>Bulk email cleaner with GUI, real-time tracking & backup support.</p>
           <a href="https://github.com/20501A0407/GADI-email-filter" class="text-accent">GitHub Repo →</a>
         </div>
         <div class="p-4 border rounded shadow hover:shadow-lg transition hover:scale-105">
           <h3 class="text-xl font-semibold">RFID Door Lock</h3>
-          <p>Multi-factor authentication system using Raspberry Pi + Arduino.</p>
+          <p>RFID, biometric, and PIN-based door access control system.</p>
           <a href="https://github.com/20501A0407/RFID-Door-Lock-Authentication" class="text-accent">GitHub Repo →</a>
         </div>
       </div>
@@ -106,7 +137,7 @@
     <footer class="text-center mt-10 opacity-80 text-sm">
       © 2025 Dinesh Aluri. Built with ❤️ using HTML & Tailwind CSS.
     </footer>
-  </div>
 
+  </div>
 </body>
 </html>
