@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,12 +13,18 @@
   <header class="bg-white dark:bg-gray-800 shadow p-4 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">Dinesh Aluri</h1>
-      <nav>
-        <a href="#skills" class="px-4 hover:text-blue-500">Skills</a>
-        <a href="#projects" class="px-4 hover:text-blue-500">Projects</a>
-        <a href="#certs" class="px-4 hover:text-blue-500">Certifications</a>
-        <a href="#contact" class="px-4 hover:text-blue-500">Contact</a>
-      </nav>
+      <div class="flex items-center space-x-4">
+        <nav class="hidden sm:block">
+          <a href="#skills" class="px-2 hover:text-blue-500">Skills</a>
+          <a href="#projects" class="px-2 hover:text-blue-500">Projects</a>
+          <a href="#certs" class="px-2 hover:text-blue-500">Certifications</a>
+          <a href="#contact" class="px-2 hover:text-blue-500">Contact</a>
+        </nav>
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" class="text-xl">
+          🌙
+        </button>
+      </div>
     </div>
   </header>
 
