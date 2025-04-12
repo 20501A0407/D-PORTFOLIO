@@ -6,6 +6,18 @@
   <title>Dinesh Aluri | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
 
@@ -28,10 +40,16 @@
     </div>
   </header>
 
+  <!-- Particle Background -->
+  <div id="tsparticles" class="absolute top-0 left-0 w-full h-screen -z-10"></div>
+
   <!-- Hero -->
-  <section class="text-center py-20" data-aos="fade-down">
-    <h2 class="text-4xl font-bold mb-2">Hello, I'm Dinesh 👋</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">An ECE grad passionate about AI, ML, signal processing, and wireless communication.</p>
+  <section class="text-center py-20 min-h-screen flex items-center justify-center relative" data-aos="fade-down">
+    <div class="space-y-4">
+      <img src="avatar.png" alt="Dinesh Avatar" class="w-32 h-32 rounded-full mx-auto animate-float shadow-lg border-4 border-white dark:border-gray-800" />
+      <h2 class="text-4xl font-bold">Hello, I'm Dinesh 👋</h2>
+      <p id="typing" class="text-lg text-blue-600 dark:text-blue-400"></p>
+    </div>
   </section>
 
   <!-- Skills & Experience -->
@@ -115,5 +133,36 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="scroll.js"></script>
+  <script>
+    AOS.init();
+    new Typed("#typing", {
+      strings: ["Electronics Engineer", "AI/ML Enthusiast", "Signal Processing Explorer", "Open to Opportunities"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+    });
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: {
+        color: "#f0f0f0",
+      },
+      particles: {
+        number: { value: 40 },
+        color: { value: "#3b82f6" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 3 },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          outModes: { default: "bounce" },
+        },
+      },
+    });
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
 </body>
 </html>
