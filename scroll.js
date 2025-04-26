@@ -1,11 +1,11 @@
 // scroll.js
 AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-  });
-  
-  // Dark mode toggle
+  duration: 1000,
+  easing: 'ease-in-out',
+  once: true,
+});
+
+// Dark mode toggle
 const toggleBtn = document.getElementById("theme-toggle");
 const html = document.documentElement;
 
@@ -15,7 +15,7 @@ if (localStorage.getItem("theme") === "dark") {
   toggleBtn.textContent = "☀️";
 }
 
-// Toggle theme on click
+// Toggle theme
 toggleBtn.addEventListener("click", () => {
   html.classList.toggle("dark");
   if (html.classList.contains("dark")) {
