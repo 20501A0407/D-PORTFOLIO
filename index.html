@@ -6,6 +6,9 @@
   <title>Dinesh Aluri | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Link to External CSS (carousel.css) -->
+  <link rel="stylesheet" href="carousel.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white font-sans leading-relaxed tracking-wide flex flex-col">
 
@@ -29,40 +32,23 @@
   </header>
 
   <!-- Hero Section with Carousel -->
-<section class="relative text-center py-20" data-aos="fade-down">
-  <!-- Carousel Background -->
-  <div class="absolute inset-0 z-[-1] overflow-hidden">
-    <div id="carousel" class="h-full w-full bg-cover bg-center transition-all duration-700">
-      <img src="image1.jpg" alt="Image 1" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-100">
-      <img src="image2.jpg" alt="Image 2" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-0">
-      <img src="image3.jpg" alt="Image 3" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-0">
+  <section class="relative text-center py-20" data-aos="fade-down">
+    <!-- Carousel Background -->
+    <div class="absolute inset-0 z-[-1] overflow-hidden">
+      <div id="carousel" class="h-full w-full bg-cover bg-center transition-all duration-700">
+        <img src="image1.jpg" alt="Image 1" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-100">
+        <img src="image2.jpg" alt="Image 2" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-0">
+        <img src="image3.jpg" alt="Image 3" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-0">
+      </div>
     </div>
-  </div>
 
-  <!-- Hero Content -->
-  <h2 class="text-4xl font-bold mb-2">Hello, I'm Dinesh 👋</h2>
-  <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">An aspiring software developer passionate about AI, ML, and software development.</p>
-</section>
+    <!-- Hero Content -->
+    <h2 class="text-4xl font-bold mb-2">Hello, I'm Dinesh 👋</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">An aspiring software developer passionate about AI, ML, and software development.</p>
+  </section>
 
-<!-- JavaScript for Carousel -->
-<script>
-  let currentIndex = 0;
-  const images = document.querySelectorAll('#carousel img');
-
-  function changeImage() {
-    images[currentIndex].classList.remove('opacity-100');
-    images[currentIndex].classList.add('opacity-0');
-    
-    currentIndex = (currentIndex + 1) % images.length;
-
-    images[currentIndex].classList.remove('opacity-0');
-    images[currentIndex].classList.add('opacity-100');
-  }
-
-  setInterval(changeImage, 3000); // Change image every 3 seconds
-</script>
-
-
+  <!-- JavaScript for Carousel -->
+  <script src="carousel.js"></script>
 
  <!-- Skills -->
 <section id="skills" class="bg-white dark:bg-gray-800 py-16" data-aos="fade-right">
