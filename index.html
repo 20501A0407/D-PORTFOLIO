@@ -351,39 +351,37 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="scroll.js"></script>
-<<<<<<< HEAD
-  <script>
-    const toggleBtn = document.getElementById("theme-toggle");
-    const html = document.documentElement;
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="scroll.js"></script>
+<script>
+  AOS.init(); // Initialize scroll animations
 
-    // Load saved theme
-    if (localStorage.getItem("theme") === "dark") {
-      html.classList.add("dark");
+  const toggleBtn = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  // Load saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    html.classList.add("dark");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    html.classList.toggle("dark");
+    if (html.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
       toggleBtn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙";
     }
-      toggleBtn.addEventListener("click", () => {
-      html.classList.toggle("dark");
-      if (html.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-        toggleBtn.textContent = "☀️";
-      } else {
-        localStorage.setItem("theme", "light");
-        toggleBtn.textContent = "🌙";
-      }
-   
-    });
+  });
 
-    // Search filter logic
-    const searchInput = document.getElementById("searchInput");
+  // Search filter logic
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
     searchInput.addEventListener("keyup", () => {
       const query = searchInput.value.toLowerCase();
-      document.querySelectorAll(".skill-item").forEach(item => {
-        item.style.display = item.textContent.toLowerCase().includes(query) ? "block" : "none";
-      });
-      document.querySelectorAll(".project-item").forEach(item => {
-        item.style.display = item.textContent.toLowerCase().includes(query) ? "block" : "none";
+      document.querySelectorAll
       });
     });
   </script>
