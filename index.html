@@ -6,41 +6,46 @@
   <title>Dinesh Aluri | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Link to External CSS (carousel.css) -->
   <link rel="stylesheet" href="carousel.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #f8fafc, #e0f7fa, #fce4ec);
+      transition: background 0.5s ease-in-out;
+    }
+    .colorful-text {
+      background: linear-gradient(to right, #06b6d4, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .rainbow-border {
+      border-width: 3px;
+      border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white font-sans leading-relaxed tracking-wide flex flex-col">
+<body class="text-gray-900 dark:text-white font-sans leading-relaxed tracking-wide flex flex-col">
 
   <!-- Header -->
-<header class="bg-white dark:bg-gray-800 shadow p-4 sticky top-0 z-50">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <!-- Logo with profile -->
-    <div class="flex items-center space-x-4">
-      <!-- Profile Picture -->
-      <img src="profile.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-blue-500" />
-      <!-- Name -->
-      <h1 class="text-2xl font-bold">DINESH ALURI</h1>
+  <header class="bg-white dark:bg-gray-800 shadow p-4 sticky top-0 z-50 rainbow-border">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="profile.jpg" alt="Profile" class="w-10 h-10 rounded-full border-2 border-blue-500" />
+        <h1 class="text-2xl font-bold colorful-text">DINESH ALURI</h1>
+      </div>
+      <div class="flex items-center space-x-4">
+        <nav class="hidden sm:block">
+          <a href="#skills" class="px-2 hover:text-pink-500">Skills</a>
+          <a href="#projects" class="px-2 hover:text-pink-500">Projects</a>
+          <a href="#certs" class="px-2 hover:text-pink-500">Certifications</a>
+          <a href="#contact" class="px-2 hover:text-pink-500">Contact</a>
+        </nav>
+        <button id="theme-toggle" class="text-xl">🌙</button>
+      </div>
     </div>
-
-    <!-- Navigation and Theme Toggle -->
-    <div class="flex items-center space-x-4">
-      <nav class="hidden sm:block">
-        <a href="#skills" class="px-2 hover:text-blue-500">Skills</a>
-        <a href="#projects" class="px-2 hover:text-blue-500">Projects</a>
-        <a href="#certs" class="px-2 hover:text-blue-500">Certifications</a>
-        <a href="#contact" class="px-2 hover:text-blue-500">Contact</a>
-      </nav>
-      <!-- Dark Mode Toggle -->
-      <button id="theme-toggle" class="text-xl">🌙</button>
-    </div>
-  </div>
-</header>
-
+  </header>
 
   <!-- Hero Section with Carousel -->
   <section class="relative text-center py-20" data-aos="fade-down">
-    <!-- Carousel Background -->
     <div class="absolute inset-0 z-[-1] overflow-hidden">
       <div id="carousel" class="h-full w-full bg-cover bg-center transition-all duration-700">
         <img src="image1.jpg" alt="Image 1" class="h-full w-full object-cover absolute inset-0 transition-opacity duration-1000 opacity-100">
@@ -50,11 +55,10 @@
     </div>
 
     <!-- Hero Content -->
-    <h2 class="text-4xl font-bold mb-2">Hello, I'm Dinesh 👋</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">An aspiring software developer passionate about AI, ML, and software development.</p>
+    <h2 class="text-4xl font-bold mb-2 colorful-text">Hello, I'm Dinesh 👋</h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300 max-w-xl mx-auto">An aspiring software developer passionate about AI, ML, and software development.</p>
   </section>
 
-  <!-- JavaScript for Carousel -->
   <script src="carousel.js"></script>
 
 <!-- Skills -->
